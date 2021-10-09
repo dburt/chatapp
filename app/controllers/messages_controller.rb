@@ -19,7 +19,7 @@ class MessagesController < ApplicationController
         format.html { redirect_to messages_url, notice: "Message was successfully created." }
         format.json { render :show, status: :created, location: @message }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { redirect_to messages_url, status: :unprocessable_entity }
         format.json { render json: @message.errors, status: :unprocessable_entity }
       end
     end
@@ -32,7 +32,7 @@ class MessagesController < ApplicationController
         format.html { redirect_to messages_url, notice: "Message was successfully updated." }
         format.json { render :show, status: :ok, location: @message }
       else
-        format.html { render :edit, status: :unprocessable_entity }
+        format.html { redirect_to messages_url, status: :unprocessable_entity }
         format.json { render json: @message.errors, status: :unprocessable_entity }
       end
     end

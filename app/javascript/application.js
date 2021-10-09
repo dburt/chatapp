@@ -2,5 +2,4 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 
-console.log(1)
 document.getElementById('message_body').focus()
