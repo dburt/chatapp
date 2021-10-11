@@ -1,24 +1,14 @@
-# README
+# Chat app
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+1. `rails s`
+2. https://localhost:3000/
+3. Chat!
 
-Things you may want to cover:
+(Also Redis to put the instant in instant messaging.)
 
-* Ruby version
+## To do
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Users (email one-time link to sign in)
+* Rooms
+* Edit/delete messages
+* Gifs
