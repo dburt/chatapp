@@ -12,10 +12,10 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       if @message.save
-        format.html { redirect_to messages_url, notice: "Message was successfully created." }
+        format.html { redirect_to root_url }
         format.json { render :show, status: :created, location: @message }
       else
-        format.html { redirect_to messages_url, status: :unprocessable_entity }
+        format.html { redirect_to root_url, status: :unprocessable_entity }
         format.json { render json: @message.errors, status: :unprocessable_entity }
       end
     end
@@ -25,10 +25,10 @@ class MessagesController < ApplicationController
   def update
     respond_to do |format|
       if @message.update(message_params)
-        format.html { redirect_to messages_url, notice: "Message was successfully updated." }
+        format.html { redirect_to root_url }
         format.json { render :show, status: :ok, location: @message }
       else
-        format.html { redirect_to messages_url, status: :unprocessable_entity }
+        format.html { redirect_to root_url, status: :unprocessable_entity }
         format.json { render json: @message.errors, status: :unprocessable_entity }
       end
     end

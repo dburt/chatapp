@@ -13,3 +13,39 @@
  *= require_tree .
  *= require_self
  */
+
+html, body {
+    font-family: sans-serif;
+}
+
+blockquote {
+    background-color: lightblue;
+    padding: 1ex;
+    border-radius: 0.5ex;
+    margin: 1ex;
+    position: relative;
+}
+blockquote::before {
+    content: '';
+    border: solid 1ex;
+    border-color: transparent lightblue lightblue transparent;
+    left: -1ex;
+    bottom: 0;
+    position: absolute;
+}
+
+input#message_body {
+    margin: 1ex 0 1ex 1ex;
+    padding: 1ex;
+    border-radius: 1ex;
+    border: 1px solid lightblue;
+    font-family: sans-serif;
+}
+input[type=submit] {
+    margin: 1ex 1ex 1ex 0;
+    padding: 1ex;
+    border-radius: 1ex;
+    appearance: none;
+    border: 1px solid black;
+    background: white;
+}
