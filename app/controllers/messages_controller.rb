@@ -6,10 +6,6 @@ class MessagesController < ApplicationController
     @messages = Message.order(id: :desc).limit(5).reverse
   end
 
-  # GET /messages/1 or /messages/1.json
-  def show
-  end
-
   # POST /messages or /messages.json
   def create
     @message = Message.new(message_params)
