@@ -10,5 +10,4 @@
 
 * Users (email one-time link to sign in)
 * Rooms
-* Edit/delete messages
 * Gifs

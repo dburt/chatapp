@@ -1,5 +1,9 @@
-<div id="<%= dom_id message %>" class="scaffold_record">
-  <blockquote>
-    <%= message.body %>
-  </blockquote>
-</div>
+<%= turbo_frame_tag message do %>
+  <div id="<%= dom_id message %>">
+    <blockquote>
+      <%= message.body %>
+      <%= link_to "✏️", edit_message_path(message), class: 'edit_btn' %>
+      <%= link_to "🗑️", message_destroy_path(message), method: :delete, class: 'delete_btn' %>
+    </blockquote>
+  </div>
+<% end %>

@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  before_action :set_message, only: %i[ show update destroy ]
+  before_action :set_message, only: %i[ show edit update ]
 
   # GET /messages or /messages.json
   def index
@@ -21,6 +21,9 @@ class MessagesController < ApplicationController
     end
   end
 
+  def edit
+  end
+
   # PATCH/PUT /messages/1 or /messages/1.json
   def update
     respond_to do |format|
@@ -36,9 +39,10 @@ class MessagesController < ApplicationController
 
   # DELETE /messages/1 or /messages/1.json
   def destroy
+    @message = Message.find(params[:message_id])
     @message.destroy
     respond_to do |format|
-      format.html { redirect_to messages_url, notice: "Message was successfully destroyed." }
+      format.html { redirect_to messages_url }
       format.json { head :no_content }
     end
   end

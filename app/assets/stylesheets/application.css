@@ -22,14 +22,14 @@ blockquote {
     background-color: lightblue;
     padding: 1ex;
     border-radius: 0.5ex;
-    margin: 1ex;
+    margin: 1ex 1ex 1ex 3ex;
     position: relative;
 }
 blockquote::before {
     content: '';
     border: solid 1ex;
     border-color: transparent lightblue lightblue transparent;
-    left: -1ex;
+    left: -1.5ex;
     bottom: 0;
     position: absolute;
 }
@@ -48,4 +48,17 @@ input[type=submit] {
     appearance: none;
     border: 1px solid black;
     background: white;
+}
+.delete_btn, .edit_btn {
+    float: right;
+    text-decoration: none;
+    margin: 0 0.5ex;
+    opacity: 0;
+    transition: opacity 200ms ease-in-out;
+}
+blockquote:hover .delete_btn, blockquote:hover .edit_btn {
+    opacity: 0.5;
+}
+blockquote:hover .delete_btn:hover, blockquote:hover .edit_btn:hover {
+    opacity: 1;
 }
