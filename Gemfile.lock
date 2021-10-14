@@ -190,7 +190,7 @@ DEPENDENCIES
   debug (>= 1.0.0)
   importmap-rails (>= 0.3.4)
   jbuilder (~> 2.7)
-  puma (~> 5.0)
+  puma (~> 5.5)
   rails (~> 7.0.0.alpha2)
   redis (~> 4.0)
   selenium-webdriver
