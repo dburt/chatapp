@@ -13,5 +13,11 @@
     <h1>Chat app</h1>
     <div id="notice"><%= notice %></div>
     <%= yield %>
+
+    <% if signed_in? %>
+      <hr />
+      <%= current_user.email %> |
+      <%= link_to "Sign out", session_destroy_path(1) %>
+    <% end %>
   </body>
 </html>

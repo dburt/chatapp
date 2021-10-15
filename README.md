@@ -8,6 +8,5 @@
 
 ## To do
 
-* Users (email one-time link to sign in)
 * Rooms
 * Gifs

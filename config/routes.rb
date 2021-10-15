@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :sessions, only: [:new, :create, :show]
+  resources :sessions, only: [:new, :create, :show] do
+    get 'destroy'
+  end
 
   resources :messages, only: [:index, :create, :update, :edit] do
     get 'destroy'

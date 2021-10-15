@@ -1,5 +1,8 @@
 class SessionsController < ApplicationController
+  skip_before_action :login_required
+
   def new
+    redirect_to :messages if signed_in?
   end
 
   def create
@@ -18,9 +21,16 @@ class SessionsController < ApplicationController
     if token
       user = User.sign_in_with_token(token)
       if user
-        session[:user_id] = user.id
+        self.current_user = user
+        redirect_to :messages
+      else
+        redirect_to :root, notice: "That sign in link doesn't work"
       end
-      redirect_to :messages
     end
+  end
+
+  def destroy
+    self.current_user = nil
+    redirect_to :root, notice: "You are signed out"
   end
 end
