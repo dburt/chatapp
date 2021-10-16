@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
   def show
     token = params[:id]
     if token
-      user = User.sign_in_with_token(token)
+      user = User.authenticate_with_token(token)
       if user
         self.current_user = user
         redirect_to :messages

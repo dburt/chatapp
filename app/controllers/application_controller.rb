@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
 
   def current_user=(user)
     session[:user_id] = user&.id
+    ahoy.authenticate(user)
     @current_user = User.find_by_id(session[:user_id])
   end
 
