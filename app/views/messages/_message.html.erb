@@ -1,9 +1,12 @@
 <%= turbo_frame_tag message do %>
-  <div id="<%= dom_id message %>">
+  <div id="<%= dom_id message %>" data-user-id="<%= message.user_id %>">
     <blockquote>
+      <div class="author"><%= message.user %></div>
       <%= message.body %>
-      <%= link_to "✏️", edit_message_path(message), class: 'edit_btn' %>
-      <%= link_to "🗑️", message_destroy_path(message), method: :delete, class: 'delete_btn' %>
+      <span class="actions">
+        <%= link_to "✏️", edit_message_path(message), class: 'edit_btn' %>
+        <%= link_to "🗑️", message_destroy_path(message), method: :delete, class: 'delete_btn' %>
+      </span>
     </blockquote>
   </div>
 <% end %>

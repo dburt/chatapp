@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_16_103440) do
+ActiveRecord::Schema.define(version: 2021_10_16_112620) do
 
   create_table "ahoy_events", force: :cascade do |t|
     t.integer "visit_id"
@@ -57,6 +57,8 @@ ActiveRecord::Schema.define(version: 2021_10_16_103440) do
     t.text "body"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -70,4 +72,5 @@ ActiveRecord::Schema.define(version: 2021_10_16_103440) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "messages", "users"
 end

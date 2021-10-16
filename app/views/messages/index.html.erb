@@ -4,3 +4,19 @@
 </div>
 
 <%= render 'form', message: Message.new %>
+
+<style>
+  [data-user-id='<%= current_user.id %>'] > blockquote > .actions {
+      display: initial; /* show only for owner */
+  }
+  [data-user-id='<%= current_user.id %>'] > blockquote::before {
+    content: '';
+    border: solid 1ex;
+    border-color: transparent lightblue lightblue transparent;
+    left: -1.5ex;
+    right: auto;
+    bottom: 0;
+    position: absolute;
+}
+
+</style>

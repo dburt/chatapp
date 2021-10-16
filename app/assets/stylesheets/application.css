@@ -28,8 +28,8 @@ blockquote {
 blockquote::before {
     content: '';
     border: solid 1ex;
-    border-color: transparent lightblue lightblue transparent;
-    left: -1.5ex;
+    border-color: transparent transparent lightblue lightblue;
+    right: -1.5ex;
     bottom: 0;
     position: absolute;
 }
@@ -61,4 +61,11 @@ blockquote:hover .delete_btn, blockquote:hover .edit_btn {
 }
 blockquote:hover .delete_btn:hover, blockquote:hover .edit_btn:hover {
     opacity: 1;
+}
+blockquote > .actions {
+    display: none; /* show only for owner */
+}
+.author {
+    opacity: 0.5;
+    font-size: small;
 }
