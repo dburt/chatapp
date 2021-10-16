@@ -91,6 +91,14 @@ GEM
       reline (>= 0.2.7)
     jbuilder (2.11.2)
       activesupport (>= 5.0.0)
+    launchy (2.5.0)
+      addressable (~> 2.7)
+    letter_opener (1.7.0)
+      launchy (~> 2.2)
+    letter_opener_web (1.4.1)
+      actionmailer (>= 3.2)
+      letter_opener (~> 1.0)
+      railties (>= 3.2)
     loofah (2.12.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -190,6 +198,7 @@ DEPENDENCIES
   debug (>= 1.0.0)
   importmap-rails (>= 0.3.4)
   jbuilder (~> 2.7)
+  letter_opener_web
   puma (~> 5.5)
   rails (~> 7.0.0.alpha2)
   redis (~> 4.0)
@@ -202,4 +211,4 @@ DEPENDENCIES
   webdrivers
 
 BUNDLED WITH
-   2.2.25
+   2.2.29
